@@ -1,0 +1,29 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://www.ros.org/wiki/xacro">
+  <!-- 根坐标位于地面，base_link 对应车体中心。 -->
+  <xacro:macro name="chassis">
+    <link name="base_footprint"/>
+    <joint name="base_joint" type="fixed">
+      <parent link="base_footprint"/>
+      <child link="base_link"/>
+      <origin xyz="0 0 ${base_height}" rpy="0 0 0"/>
+    </joint>
+
+    <link name="base_link">
+      <xacro:box_inertia m="${base_mass}" x="${base_x}" y="${base_y}" z="${base_z}"/>
+      <visual>
+        <geometry>
+          <box size="${base_x} ${base_y} ${base_z}"/>
+        </geometry>
+        <material name="blue">
+          <color rgba="0.15 0.45 0.85 1"/>
+        </material>
+      </visual>
+      <collision>
+        <geometry>
+          <box size="${base_x} ${base_y} ${base_z}"/>
+        </geometry>
+      </collision>
+    </link>
+  </xacro:macro>
+</robot>

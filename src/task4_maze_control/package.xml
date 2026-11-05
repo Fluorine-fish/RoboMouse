@@ -1,0 +1,19 @@
+<?xml version="1.0"?>
+<package format="3">
+  <name>task4_maze_control</name>
+  <version>1.0.0</version>
+  <description>Lidar and odometry based left-wall maze follower.</description>
+  <maintainer email="student@example.com">Student Team</maintainer>
+  <license>MIT</license>
+
+  <buildtool_depend>ament_cmake</buildtool_depend>
+  <exec_depend>ament_index_python</exec_depend>
+  <exec_depend>geometry_msgs</exec_depend>
+  <exec_depend>nav_msgs</exec_depend>
+  <exec_depend>rclpy</exec_depend>
+  <exec_depend>std_msgs</exec_depend>
+
+  <export>
+    <build_type>ament_cmake</build_type>
+  </export>
+</package>
